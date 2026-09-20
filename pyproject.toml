@@ -1,0 +1,6 @@
+[project]
+name = "pil-lexer"
+version = "1.0"
+
+[project.entry-points."pygments.lexers"]
+pillexer = "pil_lexer:PilLexer"

@@ -1,0 +1,60 @@
+site_name: PIL Esolang
+site_description: PIL is a primitive interpreted esolang based off COBOL and assembly.
+site_url: https://pil-esolang.github.io
+repo_url: https://github.com/pil-esolang/PIL
+repo_name: pil-esolang/PIL
+extra_css:
+  - stylesheets/extra.css
+
+theme:
+  name: material
+  logo: img/pil.png
+  favicon: img/pil_logo.png
+  features:
+    - search.highlight
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tracking
+    - navigation.instant
+    - toc.follow
+    - search.suggest
+    - content.code.copy
+
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+
+plugins:
+  - search
+  - minify:
+    minify_html: true
+    minify_js: true
+    minify_css: true
+
+nav:
+  - Home: index.md
+  - Docs:
+    - Introduction: introduction.md
+    - Getting Started: getting_started.md
