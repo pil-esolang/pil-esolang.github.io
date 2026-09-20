@@ -58,3 +58,6 @@ nav:
   - Docs:
     - Introduction: introduction.md
     - Getting Started: getting_started.md
+    - Language:
+      - Functions: language/functions.md
+      - Registers: language/registers.md

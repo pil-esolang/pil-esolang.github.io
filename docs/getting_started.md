@@ -33,24 +33,6 @@ Then relaunch your terminal and run `pil -h` to verify.
 
 On Windows you can move the executable to a safe spot (e.g. `C:/pil_interpreter/pil.exe`) and then add that folder to your path.
 
-## Usage
-Run `pil -h` to verify installation. It should also provide all necessary information.
-
-To run a file simply do:
-```bash
-pil run FILE.pil
-```
-
-To compile a file into a PIL executable do:
-```bash
-pil compile FILE.pil OUTPUT.pilo
-```
-
-And to run the PIL executable use the aforementioned `run` command:
-```bash
-pil run OUTPUT.pilo
-```
-
 ## Hello, World!
 To run the famous hello world program paste this into a `main.pil` file:
 ```pil
