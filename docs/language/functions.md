@@ -1,15 +1,4 @@
 # Functions
-## Preface
-Before starting, there are some things that you must know about the language.
-
-First, there are only single-line comments, which start with a semicolon:
-```pil
-; this is a comment
-```
-Second, identifiers are case-sensitive and can contain dashes and digits, but cannot start with them.
-
-Third, commas are optional but highly recommended.
-
 ## Definition
 A PIL file consists solely from functions and function calls, rest is syntax sugar and for convenience. To create a function you need an unique identifier followed by parentheses:
 ```pil
@@ -87,15 +76,15 @@ main()
 ## Variables
 Variable must be defined in the function definition. They can be set and used just like parameters can. By default they have a null value:
 ```pil
-my-func() let a, b, result
+main() let a, b, result
    set 10, a
    set 20, b
    add a, b, result
-   println result
+   println result ; 30
 ```
 
 ## Variadics
-To declare a function as variadic, use `...` at the end of parameter list. Later the values can be accessed via `variadic-size` and `variadic-at` functions:
+To declare a function as variadic, use `...` at the end of parameter list. Later the values can be accessed via `variadic-size` and `variadic-at` built-ins:
 ```pil
 sum(...) let size, i, total, condition, variadic
    variadic-size size

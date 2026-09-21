@@ -8,6 +8,12 @@ main()
    my-func
 ```
 
+## Comments
+Comments start with a semicolon. There are no multi-line comments in PIL.
+```
+; this is a comment
+```
+
 ## Control flow
 There are no control statements (like if-else, for, while, break...), instead you can define labels and jump to them.
 ```pil
