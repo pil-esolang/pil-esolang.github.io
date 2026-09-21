@@ -62,3 +62,5 @@ nav:
       - Functions: language/functions.md
       - Registers: language/registers.md
       - Control Flow: language/control_flow.md
+      - Directives: language/directives.md
+      - Constants: language/constants.md
