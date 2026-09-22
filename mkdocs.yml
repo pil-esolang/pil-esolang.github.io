@@ -65,3 +65,5 @@ nav:
       - Control Flow: language/control_flow.md
       - Directives: language/directives.md
       - Constants: language/constants.md
+    - Built-ins:
+      - String Library: built-ins/strings.md
