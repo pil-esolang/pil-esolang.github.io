@@ -1,4 +1,7 @@
 # String library
+## Strings
+Strings are sequences of characters. In PIL they are automatically passed around as references and only copied when explicitly told to.
+
 ## String types
 There are two types of strings: constant strings and dynamic strings. Constant strings are strings in quotes and they live for the entirety of the program and do not need to be deallocated. Dynamic strings, on the other hand, are returned by some of the built-ins, such as `string-new`, `string-format` and others. They must be deallocated manually or you'll get an error about a memory leak.
 
@@ -30,10 +33,10 @@ Clears string. Its memory will still be available. `STRING` - dynamic string.
 string-clear STRING
 ```
 
-### string-mem-free
+### string-memfree
 Clears string and frees its memory. Does not free the string itself and is not necessary to call it before freeing it. `STRING` - dynamic string.
 ```pil
-string-mem-free STRING
+string-memfree STRING
 ```
 
 ### string-empty
@@ -169,7 +172,7 @@ string-concat STRING, ARG1, ...
 ```
 
 ### string-substr
-Creates a substring [start; end) from the given string and saves it in `DESTINATION`. Throws if `START` < 0 || `START` >= `SIZE` || `END` < 0 || `END` > `SIZE` || `START` >= `END`. `STRING` - constant or dynamic string, `START` - unsigned integer, `END` - unsigned integer, `DESTINATION` - container.
+Creates a substring [`START`; `END`) from the given string and saves it in `DESTINATION`. Throws if `START` < 0 || `START` >= `SIZE` || `END` < 0 || `END` > `SIZE` || `START` >= `END`. `STRING` - constant or dynamic string, `START` - unsigned integer, `END` - unsigned integer, `DESTINATION` - container.
 ```pil
 string-substr STRING, START, END, DESTINATION
 ```

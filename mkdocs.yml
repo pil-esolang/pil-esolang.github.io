@@ -11,7 +11,6 @@ theme:
   logo: img/pil.png
   favicon: img/pil_logo.png
   features:
-    - search.highlight
     - navigation.sections
     - navigation.indexes
     - navigation.top
@@ -67,3 +66,4 @@ nav:
       - Constants: language/constants.md
     - Built-ins:
       - String Library: built-ins/strings.md
+      - Array Library: built-ins/arrays.md
