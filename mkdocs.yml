@@ -55,15 +55,16 @@ plugins:
 nav:
   - Home: index.md
   - Docs:
-    - Introduction: introduction.md
     - Getting Started: getting_started.md
-    - Language:
-      - Functions: language/functions.md
-      - Registers: language/registers.md
-      - Values: language/values.md
-      - Control Flow: language/control_flow.md
-      - Directives: language/directives.md
-      - Constants: language/constants.md
+    - Introduction:
+      - Introduction: introduction/introduction.md
+      - Functions: introduction/functions.md
+      - Registers: introduction/registers.md
+      - Values: introduction/values.md
+      - Control Flow: introduction/control_flow.md
+      - Directives: introduction/directives.md
+      - Constants: introduction/constants.md
     - Built-ins:
       - String Library: built-ins/strings.md
       - Array Library: built-ins/arrays.md
+      - Map Library: built-ins/maps.md

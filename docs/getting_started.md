@@ -1,4 +1,6 @@
 # Getting Started
+If you'd like an introduction first, [click here](introduction/introduction.md).
+
 ## Installation
 To run PIL you need the PIL interpreter. There are two options:
 

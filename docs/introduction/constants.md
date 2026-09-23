@@ -47,3 +47,6 @@ After parsing, the code is simply this:
 main()
    println "8.666667 1.000000 3 26.000000"
 ```
+
+## Next steps
+That's a quick introduction of everything PIL has to offer. For built-ins check out [Built-ins](../built-ins/strings.md).
