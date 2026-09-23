@@ -118,9 +118,9 @@ string-erase STRING, N
 ```
 
 ### string-free
-Frees all strings and sets their values to null. Using a freed string will result in an use-after-free error. `ARG1...` - dynamic strings.
+Frees all strings and sets their values to null. Using a freed string will result in an use-after-free error. `STRING1...` - dynamic strings.
 ```pil
-string-free ARG1, ...
+string-free STRING1, ...
 ```
 
 ### string-mark

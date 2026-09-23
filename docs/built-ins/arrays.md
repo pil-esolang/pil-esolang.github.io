@@ -115,15 +115,15 @@ array-erase ARRAY, N
 ```
 
 ### array-free
-Frees all arrays and sets them to null. Does not free arrays' values. Using a freed array will result in an use-after-free error. `ARG1...` - arrays.
+Frees all arrays and sets them to null. Does not free arrays' values. Using a freed array will result in an use-after-free error. `ARRAY1...` - arrays.
 ```pil
-array-free ARG1, ...
+array-free ARRAY1, ...
 ```
 
 ### array-deep-free
-Frees all arrays and their values recursively and sets them to null. Using a freed array will result in an use-after-free error. `ARG1...` - arrays.
+Frees all arrays and their values recursively and sets them to null. Using a freed array will result in an use-after-free error. `ARRAY1...` - arrays.
 ```pil
-array-deep-free ARG1, ...
+array-deep-free ARRAY1, ...
 ```
 
 ### array-mark
