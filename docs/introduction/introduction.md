@@ -177,4 +177,4 @@ main()
 ```
 
 ## Next steps
-For a better understanding of the language you can continue reading the introduction or move on to the real documentation. Or if you'd like to try it out yourself, see [Getting Started](getting_started.md).
+For a better understanding of the language you can continue reading the introduction or move on to the real documentation. Or if you'd like to try it out yourself, see [Getting Started](../getting_started.md).

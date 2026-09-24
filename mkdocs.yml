@@ -68,3 +68,4 @@ nav:
       - String Library: built-ins/strings.md
       - Array Library: built-ins/arrays.md
       - Map Library: built-ins/maps.md
+      - Math Library: built-ins/math.md
