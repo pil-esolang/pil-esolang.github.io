@@ -187,7 +187,7 @@ array-shuffle ARRAY
 ```
 
 ### array-sort
-Sort the array. Sorts ascendingly if `ASCENDING` is thruthy, descendingly otherwise. Throws if array contains functions, labels, arrays or maps. `ARRAY` - array, `ASCENDING` - integer.
+Sort the array. Sorts ascendingly if `ASCENDING` is truthy, descendingly otherwise. Throws if array contains functions, labels, arrays or maps. `ARRAY` - array, `ASCENDING` - integer.
 ```pil
 array-sort ARRAY, ASCENDING
 ```
