@@ -70,3 +70,5 @@ nav:
       - Map Library: built-ins/maps.md
       - Math Library: built-ins/math.md
       - Built-ins: built-ins/builtins.md
+    - Interpreter:
+      - Lexer: interpreter/lexer.md
