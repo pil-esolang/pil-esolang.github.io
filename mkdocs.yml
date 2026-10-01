@@ -72,3 +72,4 @@ nav:
       - Built-ins: built-ins/builtins.md
     - Interpreter:
       - Lexer: interpreter/lexer.md
+      - Translator: interpreter/translator.md

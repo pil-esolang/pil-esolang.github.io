@@ -56,9 +56,13 @@ In PIL there are 41 different tokens, each having its own meaning. They all have
    </tbody>
 </table>
 
+Commas and whitespace are ignored. Throws on any unknown character.
+
+Throws if a floating number contains multiple decimal points.
+
 ## String rules
-Strings and characters support the following escape codes: `\a`, `\b`, `\t`, `\n`, `\v`, `\f`, `\r`, `\e`, `\\`, `\'`, `\"`, `\{`, `\}`, `\$`.
+Strings and characters support the following escape codes: `\a`, `\b`, `\t`, `\n`, `\v`, `\f`, `\r`, `\e`, `\\`, `\'`, `\"`, `\{`, `\}`, `\$`. Throws a warning on unknown escape codes.
 
-Strings and characters terminate on a newline, so multi-line strings are not possible.
+Strings and characters terminate on a newline, so multi-line strings are not possible. Throws on unterminated strings or characters.
 
-Strings support constant formatting. Lexer emits formatting and evaluation tokens on found `${` and `$[`, that get later handled in the parser.
+Strings support constant formatting. Lexer emits formatting and evaluation tokens on found `${` and `$[`, that get later handled in the parser. Throws if they are nested or if they aren't terminated.
