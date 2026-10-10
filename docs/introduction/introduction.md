@@ -163,14 +163,13 @@ main()
    println magic-number
    println my-message
 ```
-There are also the constant evaluator and the constant string formatter:
+There's also the constant evaluator, which uses a slightly more familiar syntax than rest of PIL:
 ```pil
 const magic-number [sqrt(20.4) * sin(tau()) - exp(pi())]
-const error-message "Expected num to be ${magic-number}, got {} instead."
 
 complex-math(num)
    ; do complex math...
-   error error-message, num
+   error "Expected num to be {}, got {} instead.", magic-number, num
 
 main()
    complex-math 20

@@ -4,6 +4,12 @@ It is recommended to read [Language/Values](../language/values.md) first for a b
 These are basic operation/miscellaneous built-ins present in PIL. On top of these, there are some more common math operation built-ins in the [Math Library](#math.md). Unlike other built-in documentation pages, these will contain sub-groups.
 
 ## Input/output
+### flush
+Flush the output to the terminal.
+```pil
+flush
+```
+
 ### printch
 Output a single character to the terminal. `CHAR` - character.
 ```pil
@@ -375,10 +381,10 @@ Store `VALUE` in `DESTINATION`. `VALUE` - any value, `DESTINATION` - container.
 set VALUE, DESTINATION
 ```
 
-### val-table
+### valtable
 Checks `VALUE` against all `TARGET`s and if there is a match, store the value after the `TARGET` in `DESTINATION`. Otherwise if there is an odd number of arguments, store `DEFAULT?`, else null. Each `TARGET` must have a `RESULT` after it. `VALUE` - any value except for map, `DESTINATION` - container, `TARGET...` - any value except for map, `RESULT...` - any value, `DEFAULT?` - optional value.
 ```pil
-val-table VALUE, DESTINATION, TARGET, RESULT, ..., DEFAULT?
+valtable VALUE, DESTINATION, TARGET, RESULT, ..., DEFAULT?
 ```
 
 ### table-contains
