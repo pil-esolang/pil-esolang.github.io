@@ -17,7 +17,8 @@ Runtime values are values that must be allocated to use or require post-parsing 
 string-new s, "String" ; allocate a new dynamic string
 array-new a, 1, 2, 3 ; allocate a new array
 map-new m, "John", 1, "Jake", 2, "Jane", 3 ; allocate a new map
-to-int "" ; null
+file-open "my.file", 'r', $0 ; open a file
+to-int "", $0 ; null
 println main ; function pointer
 MY-LABEL:
 println MY-LABEL ; label

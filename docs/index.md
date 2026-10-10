@@ -16,7 +16,7 @@ factorial-end:
 
 main()                              ; main program entry point
    factorial 5.0                    ; calculate factorial of 5
-   printn R$0                       ; 120
+   println R$0                      ; 120
 ```
 
 Think of it like interpreted assembly with functions, returns and higher-level instructions. For more examples check out the [Introduction](introduction/introduction.md). To try it yourself check out [Getting Started](getting_started.md).

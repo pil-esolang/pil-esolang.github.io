@@ -1,5 +1,4 @@
 # Lexer
-## Introduction
 The lexer is responsible for turning code into tokens. You can also view it as turning sentences into words for easier parsing. It is also responsible for checking if the tokens are correctly formed.
 
 ## Tokens

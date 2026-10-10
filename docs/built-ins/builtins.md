@@ -1,6 +1,8 @@
 # Built-ins
-## Introduction
+It is recommended to read [Language/Values](../language/values.md) first for a better understanding of allowed parameter types, value semantics and behavior.
+
 These are basic operation/miscellaneous built-ins present in PIL. On top of these, there are some more common math operation built-ins in the [Math Library](#math.md). Unlike other built-in documentation pages, these will contain sub-groups.
+
 ## Input/output
 ### printch
 Output a single character to the terminal. `CHAR` - character.
@@ -21,13 +23,13 @@ println ARGS...
 ```
 
 ### printf
-Formats the `FORMAT-STRING` string with all arguments after it and outputs it to the terminal. Works by replacing all `{}` with the arguments in left-to-right direction. Does not validate format argument count. `FORMAT-STRING` - constant or dynamic string, `ARG1...` - any value except for maps.
+Formats the `FORMAT-STRING` string with all arguments after it and outputs it to the terminal. Works by replacing all `{}` with the arguments in left-to-right direction. Does not validate format argument count. `FORMAT-STRING` - string, `ARG1...` - stringifyable value.
 ```pil
 printf FORMAT-STRING, ARG1, ...
 ```
 
 ### printfln
-Formats the `FORMAT-STRING` string with all arguments after it and outputs it and a newline to the terminal. Works by replacing all `{}` with the arguments in left-to-right direction. Does not validate format argument count. `FORMAT-STRING` - constant or dynamic string, `ARG1...` - any value except for maps.
+Formats the `FORMAT-STRING` string with all arguments after it and outputs it and a newline to the terminal. Works by replacing all `{}` with the arguments in left-to-right direction. Does not validate format argument count. `FORMAT-STRING` - string, `ARG1...` - stringifyable value.
 ```pil
 printfln FORMAT-STRING, ARG1, ...
 ```
@@ -161,19 +163,19 @@ catch DESTINATION, FUNCTION, ARGS...
 ```
 
 ### assert
-Exits the program and formats the `FORMAT-STRING` in the same manner as [printf](#printf) if `CONDITION` is not truthy. Does not precompute the message if the `CONDITION` is truthy. `CONDITION` - any value, `FORMAT-STRING` - constant or dynamic string, `ARGS...` - any value except for maps.
+Exits the program and formats the `FORMAT-STRING` in the same manner as [printf](#printf) if `CONDITION` is not truthy. Does not precompute the message if the `CONDITION` is truthy. `CONDITION` - any value, `FORMAT-STRING` - string, `ARGS...` - stringifyable value.
 ```pil
 assert CONDITION, FORMAT-STRING, ARGS...
 ```
 
 ### warn
-Formats the `FORMAT-STRING` in the same manner as [printf](#printf) and outputs it as a warning. `FORMAT-STRING` - constant or dynamic string, `ARGS...` - any value except for maps.
+Formats the `FORMAT-STRING` in the same manner as [printf](#printf) and outputs it as a warning. `FORMAT-STRING` - string, `ARGS...` - stringifyable value.
 ```pil
 warn FORMAT-STRING, ARGS...
 ```
 
 ### error
-Formats the `FORMAT-STRING` in the same manner as [printf](#printf), outputs it as an error and as long as the error isn't caught using [catch](#catch), exits the program. `FORMAT-STRING` - constant or dynamic string, `ARGS...` - any value except for maps.
+Formats the `FORMAT-STRING` in the same manner as [printf](#printf), outputs it as an error and as long as the error isn't caught using [catch](#catch), exits the program. `FORMAT-STRING` - string, `ARGS...` - stringifyable value.
 ```pil
 error FORMAT-STRING, ARGS...
 ```
@@ -246,15 +248,39 @@ is-char VALUE, DESTINATION
 ```
 
 ### is-string
-Stores 1 in `DESTINATION` if `VALUE` is a constant or dynamic string, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+Stores 1 in `DESTINATION` if `VALUE` is a string, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
 ```pil
 is-string VALUE, DESTINATION
+```
+
+### is-dynamic-string
+Stores 1 in `DESTINATION` if `VALUE` is a dynamically allocated string, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+```pil
+is-dynamic-string VALUE, DESTINATION
+```
+
+### is-constant-string
+Stores 1 in `DESTINATION` if `VALUE` is a constant string, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+```pil
+is-constant-string VALUE, DESTINATION
 ```
 
 ### is-array
 Stores 1 in `DESTINATION` if `VALUE` is an array, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
 ```pil
 is-array VALUE, DESTINATION
+```
+
+### is-map
+Stores 1 in `DESTINATION` if `VALUE` is a map, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+```pil
+is-map VALUE, DESTINATION
+```
+
+### is-file-handle
+Stores 1 in `DESTINATION` if `VALUE` is a file handle, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+```pil
+is-file-handle VALUE, DESTINATION
 ```
 
 ### is-reg
@@ -294,13 +320,13 @@ is-nan VALUE, DESTINATION
 ```
 
 ### to-int
-Converts `VALUE` to an integer and stores it in `DESTINATION`. If `VALUE` is a string and it isn't a valid number or is out of bounds, store null instead. `VALUE` - number, character or constant or dynamic string, `DESTINATION` - container.
+Converts `VALUE` to an integer and stores it in `DESTINATION`. If `VALUE` is a string and it isn't a valid number or is out of bounds, store null instead. `VALUE` - number, character or string, `DESTINATION` - container.
 ```pil
 to-int VALUE, DESTINATION
 ```
 
 ### to-float
-Converts `VALUE` to a float and stores it in `DESTINATION`. If `VALUE` is a string and it isn't a valid number or is out of bounds, store null instead. `VALUE` - number, character or constant or dynamic string, `DESTINATION` - container.
+Converts `VALUE` to a float and stores it in `DESTINATION`. If `VALUE` is a string and it isn't a valid number or is out of bounds, store null instead. `VALUE` - number, character or string, `DESTINATION` - container.
 ```pil
 to-float VALUE, DESTINATION
 ```
@@ -325,7 +351,7 @@ unix-time DESTINATION
 ```
 
 ### date
-Formats and allocates a date based on `FORMAT-STRING`. All format options are available [here](https://en.cppreference.com/cpp/io/manip/put_time). All of them are available and are prefixed with `%`. `FORMAT-STRING` - constant or dynamic string, `DESTINATION` - container.
+Formats and allocates a date based on `FORMAT-STRING`. All format options are available [here](https://en.cppreference.com/cpp/io/manip/put_time). All of them are available and are prefixed with `%`. `FORMAT-STRING` - string, `DESTINATION` - container.
 ```pil
 date FORMAT-STRING, DESTINATION
 ```
