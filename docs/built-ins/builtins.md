@@ -399,18 +399,6 @@ Checks whether `VALUE` matches any of the values and stores 1 in `DESTINATION` i
 table-contains VALUE, DESTINATION, TARGET...
 ```
 
-### variadic-size
-Stores the current function's variadic argument count in `DESTINATION`. `DESTINATION` - container.
-```pil
-variadic-size DESTINATION
-```
-
-### variadic-at
-Get the variadic argument at position `ID` and store it in `DESTINATION`. Throws if `ID` is out of bounds (`ID` < 0 || `ID` >= variadic count). `ID` - unsigned integer, `DESTINATION` - container.
-```pil
-variadic-at ID, DESTINATION
-```
-
 ### reg-size
 Stores the total number of registers in `DESTINATION`. `DESTINATION` - container.
 ```pil

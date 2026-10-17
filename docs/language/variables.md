@@ -2,7 +2,7 @@
 Variables are containers that can store a value. A variable doesn't have a type tied to it and can store any value, that can dynamically change during runtime.
 
 ## Locals
-Locals are variables that are purely local to a function. There are two types of locals - function parameters and locals defined by `local` keyword. Locals cannot be used outside of the function they are defined in.
+Locals are variables that are purely local to a function. There are two types of locals - function parameters and locals defined by `local` keyword. Locals cannot be used outside of the function they are defined in. By default locals are set to null value.
 
 Local define is a parse-time construct and so a local define is available by any path after the point it is defined. This means same local defines in a switch statement are not permitted, since local does not care about the control flow of the function.
 ```pil
@@ -17,7 +17,7 @@ skip:
 ## Globals
 Globals are variables that can be accessed by any part of the program after the point it is defined. A global defined inside a function is still accessible to all functions and commands after it, although it is not recommended to do so.
 
-Globals can be defined using `global` keyword. Just like locals, globals are parse-time constructs, but unlike locals, can be assigned an initial value. Unlike constants, their value can change during runtime. Global constructs can be chained using commas, with the last one ending with a semicolon.
+Globals can be defined using `global` keyword. Just like locals, globals are parse-time constructs, but unlike locals, can be assigned an initial value. By default globals are set to null value. Unlike constants, their value can change during runtime. Global constructs can be chained using commas, with the last one ending with a semicolon.
 ```pil
 global my-global = 1337;
 global other-global;
@@ -37,7 +37,7 @@ main()
 ```
 
 ## Registers/return registers
-By default there are 16 registers and 4 return registers for a program. But that can be changed using [Directives](directives.md). Registers are global containers that do not need to be defined. They should be used for temporary, unimportant values such as conditions. They can be accessed using `$N` and `r$N` syntax respectively and are 0-indexed.
+By default there are 16 registers and 4 return registers for a program. But that can be changed using [Directives](directives.md). Registers are global containers that do not need to be defined. They should be used for temporary, unimportant values such as conditions. They can be accessed using `$N` and `r$N` syntax respectively and are 0-indexed. By default registers are set to null value.
 
 Registers cannot be accessed using runtime values but can be using parse-time constructs such as constants and enumerations. This can be used to create named registers, which is equal to globals. The only reason for this could be the register built-ins.
 

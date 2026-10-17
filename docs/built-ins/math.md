@@ -49,8 +49,11 @@ Get the remainder of dividing `N1` by `N2` and store in `RESULT`. Supports float
 mod N1, N2, RESULT
 ```
 
-## floor-mod
+## fmod
 Get the remainder of dividing `N1` by `N2`, using the formula `((N1 % N2) + N2) % N2`, and store in `RESULT`. Supports floats and negative numbers. Returns float if either number is a float. Returns 0 on division by zero. `N1` - number, `N2` - number, `RESULT` - container.
+```pil
+fmod N1, N2, RESULT
+```
 
 ## pow
 Exponentiate `N1` to the exponent `N2`. Returns float if either number is a float. `N1` - number, `N2` - number, `RESULT` - container.

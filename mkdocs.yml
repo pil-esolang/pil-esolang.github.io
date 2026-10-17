@@ -60,6 +60,7 @@ nav:
     - Language:
       - Values: language/values.md
       - Variables: language/variables.md
+      - Functions: language/functions.md
       - Directives: language/directives.md
     - Built-ins:
       - String Library: built-ins/strings.md
