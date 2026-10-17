@@ -63,6 +63,7 @@ nav:
       - Functions: language/functions.md
       - Structures: language/structures.md
       - Enumerations: language/enumerations.md
+      - Constant Evaluator: language/cevaluator.md
       - Directives: language/directives.md
     - Built-ins:
       - String Library: built-ins/strings.md
