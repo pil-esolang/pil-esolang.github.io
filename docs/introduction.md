@@ -45,10 +45,10 @@ main()
 ```
 
 ## Variables
-Variables can be defined inside functions using the `let` keyword.
+Variables can be defined inside functions using the `local` keyword.
 ```pil
 greet()
-   let name;
+   local name;
    print "Tell me your name: ";
    readln name;
    printfln "Hello, {}!", name;
@@ -81,11 +81,11 @@ PIL also contains structures that can be defined using the `struct` keyword:
 struct Vec2 ( x, y )
 
 main()
-   let v1, v2, v3;
+   local v1, v2, v3;
    make Vec2, v1, 1.0, 2.0;
    make Vec2, v2, 3.0, 4.0;
 
-   let x, y;
+   local x, y;
    add v1.x, v2.x, x;
    add v1.y, v2.y, y;
    make Vec2, v3, x, y;
@@ -99,7 +99,7 @@ And structures can be used as arrays if necessary using the `array` keyword:
 struct array MyArray ( _1, _2, _3, _4, _5 )
 
 main()
-   let array;
+   local array;
    make MyArray, array, 5, 4, 3, 2, 1;
    println array; # [5, 4, 3, 2, 1]
    array-reverse array;
@@ -107,7 +107,7 @@ main()
    array-shuffle array;
    println array; # [3, 5, 2, 1, 4] could be something else for you
 
-   let x, y, z;
+   local x, y, z;
    array-sort array, 1;
    add array._1, array._2, x;
    add array._3, array._4, y;
@@ -130,7 +130,7 @@ enum Day (
 )
 
 main()
-   let today, day-names, name;
+   local today, day-names, name;
    array-new day-names, "", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday";
    set Day.Wednesday, today;
    array-at day-names, today, name;
@@ -145,13 +145,13 @@ const pi = 3.141592;
 global r = 10.0;
 
 area()
-   let result;
+   local result;
    mul r, r, result;
    mul result, pi, result;
    return result;
 
 main()
-   let result;
+   local result;
    call result, area;
    println result; # 314.159
    set 20.0, r;

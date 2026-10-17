@@ -1,5 +1,5 @@
-# Translator
-Translator is ran right after the lexer and is responsible for modifying the token stream in various ways. This can be done solely through directives. Throws on unknown directives. Constants cannot be used in this phase as they are handled at the parser phase.
+# Directives
+Directives are translator-time constructs that modify the token stream or set some interpreter configuration.
 
 ## @include
 ```pil

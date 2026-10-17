@@ -53,9 +53,6 @@ Key values are any value that can be used as a key for a hash map. These are any
 #### String value
 String value refers to any string value - constant or dynamic string, unless specifically noted as only a constant or dynamic string.
 
-#### Container
-Containers refer to registers, return registers or locals.
-
 #### Unsigned integer
 Unsigned integer is an integer that cannot be negative. It still is signed under the hood but when passed to a built-in it must not be negative.
 

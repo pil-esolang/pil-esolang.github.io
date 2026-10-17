@@ -59,8 +59,8 @@ nav:
     - Introduction: introduction.md
     - Language:
       - Values: language/values.md
-      - Lexer: language/lexer.md
-      - Translator: language/translator.md
+      - Variables: language/variables.md
+      - Directives: language/directives.md
     - Built-ins:
       - String Library: built-ins/strings.md
       - Array Library: built-ins/arrays.md

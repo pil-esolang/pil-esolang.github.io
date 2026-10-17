@@ -25,6 +25,12 @@ Get the value at key `KEY` and store it in `DESTINATION`. If there is no value a
 map-at MAP, KEY, DESTINATION
 ```
 
+## map-at-or
+Get the value at key `KEY` and store it in `DESTINATION`. If there is no value at `KEY`, add it with the value set to `DEFAULT` and store it in `DESTINATION`. `MAP` - map, `KEY` - key value, `DEFAULT` - any value, `DESTINATION` - container.
+```pil
+map-at-or MAP, KEY, DEFAULT, DESTINATION
+```
+
 ## map-contains
 Stores 1 in `DESTINATION` if a key-value pair with key `KEY` exists, otherwise 0. `MAP` - map, `KEY` - key value, `DESTINATION` - container.
 ```pil

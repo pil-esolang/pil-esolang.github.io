@@ -5,7 +5,7 @@ Here's a factorial example:
 ```pil
 # calculates the factorial of N
 factorial(n)
-   let result;                   # define a new variable
+   local result;                 # define a new variable
    leeq n, 1, $0;                # check if N is smaller or equal to 1
    jmp $0, factorial-end;        # if it is, jump to end, where we return 1
 
