@@ -308,9 +308,15 @@ is-label VALUE, DESTINATION
 ```
 
 ### is-struct
-Stores 1 in `DESTINATION` if `VALUE` is a struct, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+Stores 1 in `DESTINATION` if `VALUE` is a structure, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
 ```pil
 is-struct VALUE, DESTINATION
+```
+
+### is-of-struct
+Stores 1 in `DESTINATION` if `VALUE` is of struct `STRUCT`, otherwise 0. `VALUE` - array, `STRUCT` - structure, `DESTINATION` - container.
+```pil
+is-of-struct VALUE, STRUCT, DESTINATION
 ```
 
 ### is-null
