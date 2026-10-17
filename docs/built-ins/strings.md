@@ -115,42 +115,6 @@ Frees all strings and sets their values to null. Using a freed string will resul
 string-free STRING1, ...
 ```
 
-## string-mark
-Mark a string with integer `MARK`. A mark does nothing by itself. By default, strings are marked with 0. `STRING` - dynamic string, `MARK` - integer.
-```pil
-string-mark STRING, MARK
-```
-
-## string-get-mark
-Get the mark of a string and store it in `DESTINATION`. `STRING` - dynamic string, `DESTINATION` - container.
-```pil
-string-get-mark STRING, DESTINATION
-```
-
-## string-free-marked
-Free all strings marked with `MARK`. Unlike `string-free`, none of them will be set to null. Operation is O(N), where N is the number of allocated strings. `MARK` - integer.
-```pil
-string-free-marked MARK
-```
-
-## string-get-marked-count
-Get the count of all strings marked with `MARK`. Operation is O(N), where N is the number of allocated strings. `MARK` - integer, `DESTINATION` - container.
-```pil
-string-get-marked-count MARK, DESTINATION
-```
-
-## string-get-marked
-Get all strings marked with `MARK`, allocate an array with references to them and store in `DESTINATION`. Operation is O(N), where N is the number of allocated strings. `MARK` - integer, `DESTINATION` - container.
-```pil
-string-get-marked MARK, DESTINATION
-```
-
-## string-any-marked
-Check if any string is marked with `MARK` and store 1 in `DESTINATION` if there is, otherwise 0. Operation is O(N), where N is the number of allocated strings. `MARK` - integer, `DESTINATION` - container.
-```pil
-string-any-marked MARK, DESTINATION
-```
-
 ## string-split
 Split the string on `DELIMITER`, allocate an array of the split pieces and store it in `DESTINATION`. Time complexity is O(N*M). Throws if `DELIMITER` is empty. `STRING` - string, `DELIMITER` - string or character, `DESTINATION` - container.
 ```pil

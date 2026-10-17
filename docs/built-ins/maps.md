@@ -79,46 +79,10 @@ Frees all maps and their key-value pairs recursively and sets them to null. Usin
 map-deep-free MAP1, ...
 ```
 
-## map-mark
-Mark a map with integer `MARK`. A mark does nothing by itself. By default, maps are marked with 0. `MAP` - map, `MARK` - integer.
-```pil
-map-mark MAP, MARK
-```
-
-## map-get-mark
-Get the mark of a map and store it in `DESTINATION`. `MAP` - map, `DESTINATION` - container.
-```pil
-map-get-mark MAP, DESTINATION
-```
-
-## map-free-marked
-Free all maps marked with `MARK`. Unlike `map-free`, none of them will be set to null. Operation is O(N), where N is the number of allocated maps. `MARK` - integer.
-```pil
-map-free-marked MARK
-```
-
-## map-get-marked-count
-Get the count of all maps marked with `MARK`. Operation is O(N), where N is the number of allocated maps. `MARK` - integer, `DESTINATION` - container.
-```pil
-map-get-marked-count MARK, DESTINATION
-```
-
-## map-get-marked
-Get all maps marked with `MARK`, allocate an array with references to them and store in `DESTINATION`. Operation is O(N), where N is the number of allocated maps. `MARK` - integer, `DESTINATION` - container.
-```pil
-map-get-marked MARK, DESTINATION
-```
-
-## map-any-marked
-Check if any map is marked with `MARK` and store 1 in `DESTINATION` if there is, otherwise 0. Operation is O(N), where N is the number of allocated maps. `MARK` - integer, `DESTINATION` - container.
-```pil
-map-any-marked MARK, DESTINATION
-```
-
-## map-shallow-copy
+## map-copy
 Shallow copies a map into `DESTINATION`. Only copies references for complex runtime values like dynamic strings, arrays and maps. `MAP` - map, `DESTINATION` - container.
 ```pil
-map-shallow-copy MAP, DESTINATION
+map-copy MAP, DESTINATION
 ```
 
 ## map-deep-copy

@@ -101,16 +101,16 @@ Checks if `A` is not equal to `B` and if it's not, stores 1 in `DESTINATION`, ot
 neq A, B, DESTINATION
 ```
 
-### or
-Checks if either `A` or `B` is true and if so, stores 1 in `DESTINATION`, otherwise 0. `A` - any value, `B` - any value, `DESTINATION` - container.
-```pil
-or A, B, DESTINATION
-```
-
 ### and
 Checks if both `A` and `B` are true and if so, stores 1 in `DESTINATION`, otherwise 0. `A` - any value, `B` - any value, `DESTINATION` - container.
 ```pil
 and A, B, DESTINATION
+```
+
+### or
+Checks if either `A` or `B` is true and if so, stores 1 in `DESTINATION`, otherwise 0. `A` - any value, `B` - any value, `DESTINATION` - container.
+```pil
+or A, B, DESTINATION
 ```
 
 ### not
@@ -307,6 +307,12 @@ Stores 1 in `DESTINATION` if `VALUE` is a label, otherwise 0. `VALUE` - any valu
 is-label VALUE, DESTINATION
 ```
 
+### is-struct
+Stores 1 in `DESTINATION` if `VALUE` is a struct, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
+```pil
+is-struct VALUE, DESTINATION
+```
+
 ### is-null
 Stores 1 in `DESTINATION` if `VALUE` is null, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
 ```pil
@@ -463,4 +469,53 @@ func-variadic FUNCTION, DESTINATION
 Checks whether `ARGS` would be a valid argument count for `FUNCTION` and stores 1 in `DESTINATION` if so, otherwise 0. `FUNCTION` - function, `ARGS` - unsigned integer, `DESTINATION` - container.
 ```pil
 func-arg-match FUNCTION, ARGS, DESTINATION
+```
+
+## Structures
+### make
+Create a new structure based on `STRUCT` template and store in `DESTINATION`. `ARGS...` count must match structure's field count. `STRUCT` - structure, `DESTINATION` - container, `ARGS...` - any value.
+```pil
+make STRUCT, DESTINATION, ARGS...
+```
+
+### free
+Deallocates all values. Throws if an argument is not an allocated value. `ARGS...` - string, array or map.
+```pil
+free ARGS...
+```
+
+### deep-free
+Deallocates all values and deallocates all children recursively if container has any. Throws if an argument is not an allocated value. `ARGS...` - string, array or map.
+```pil
+deep-free ARGS...
+```
+
+### copy
+Shallow copy `VALUE` to `DESTINATION`. Allocates the value if it is allocated. `VALUE` - any value, `DESTINATION` - container.
+```pil
+copy VALUE, DESTINATION
+```
+
+### deep-copy
+Deep copy `VALUE` to `DESTINATION`. Allocates the value if it is allocated and all its children. If the container contains multiple identical references to the same object, it is only copied once. `VALUE` - any value, `DESTINATION` - container.
+```pil
+deep-copy VALUE, DESTINATION
+```
+
+### size
+Takes and stores the size of `VALUE` in `DESTINATION`. If `VALUE` is not a container, stores 1. `VALUE` - any value. `DESTINATION` - container.
+```pil
+size VALUE, DESTINATION
+```
+
+### at
+Stores the value at `KEY` in `DESTINATION`. For maps `KEY` is the literal key and for arrays and strings it is the index. Throws if key is of incorrect type (non-integer for strings and arrays or non-key type for maps) or if it is out of bounds. Throws if `CONTAINER` cannot be accessed. `CONTAINER` - string, array or map, `KEY` - integer/key value, `DESTINATION` - container.
+```pil
+at CONTAINER, KEY, DESTINATION
+```
+
+### store
+Store `VALUE` at `KEY`. For maps `KEY` is the literal key and for arrays and strings it is the index. Throws if key is of incorrect type (non-integer for strings and arrays or non-key type for maps) or if it is out of bounds. Throws if `CONTAINER` cannot be accessed. `CONTAINER` - string, array or map, `KEY` - integer/key value, `VALUE` - any value.
+```pil
+store CONTAINER, KEY, VALUE
 ```

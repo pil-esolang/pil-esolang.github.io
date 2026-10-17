@@ -22,6 +22,9 @@ A value holds a specific type of data. A container can hold any type of value an
       <tr><td>Array</td><td>array-new $0, 1, 2, 3</td><td>Dynamically allocated array of dynamic size</td></tr>
       <tr><td>Map</td><td>map-new $0, 1, 2</td><td>Allocated hash map</td></tr>
       <tr><td>File handle</td><td>file-open "my.file", 'r', $0</td><td>A file handle</td></tr>
+      <tr><td>Structure</td><td>struct Struct (...)</td><td>A user-defined structure</td></tr>
+      <tr><td>Structure Access</td><td>Struct.Field</td><td>Access into a structure</td></tr>
+      <tr><td>Global Variable</td><td>global</td><td>Named container that holds a value</td></tr>
       <tr><td>Null</td><td>to-int "", $0</td><td>Invalid/error value</td></tr>
    </tbody>
 </table>
@@ -36,7 +39,7 @@ Parse-time values are basic values that are able to be created at parse-time. Th
 Runtime values are values that must be allocated to use or require references usable after parsing. These include dynamic strings, arrays, maps, file handles, function pointers, labels and null. All except null are simply references to internal values and have to be copied explicitly (if allowed by the data type).
 
 #### Containers
-Containers are runtime values that store other values. These include registers, return registers and locals. Constants do not fall under this category as they do not exist after parsing.
+Containers are runtime values that store other values. These include registers, return registers, locals, globals and structure accesses. Constants do not fall under this category as they do not exist after parsing.
 
 ## Built-in value terminology
 Built-in documentation uses the following terminology to name a group of types.

@@ -121,42 +121,6 @@ Frees all arrays and their values recursively and sets them to null. Using a fre
 array-deep-free ARRAY1, ...
 ```
 
-## array-mark
-Mark an array with integer `MARK`. A mark does nothing by itself. By default, arrays are marked with 0. `ARRAY` - array, `MARK` - integer.
-```pil
-array-mark ARRAY, MARK
-```
-
-## array-get-mark
-Get the mark of an array and store it in `DESTINATION`. `ARRAY` - array, `DESTINATION` - container.
-```pil
-array-get-mark ARRAY, DESTINATION
-```
-
-## array-free-marked
-Free all arrays marked with `MARK`. Unlike `array-free`, none of them will be set to null. Operation is O(N), where N is the number of allocated arrays. `MARK` - integer.
-```pil
-array-free-marked MARK
-```
-
-## array-get-marked-count
-Get the count of all arrays marked with `MARK`. Operation is O(N), where N is the number of allocated arrays. `MARK` - integer, `DESTINATION` - container.
-```pil
-array-get-marked-count MARK, DESTINATION
-```
-
-## array-get-marked
-Get all arrays marked with `MARK`, allocate an array with references to them and store in `DESTINATION`. Operation is O(N), where N is the number of allocated arrays. `MARK` - integer, `DESTINATION` - container.
-```pil
-array-get-marked MARK, DESTINATION
-```
-
-## array-any-marked
-Check if any array is marked with `MARK` and store 1 in `DESTINATION` if there is, otherwise 0. Operation is O(N), where N is the number of allocated arrays. `MARK` - integer, `DESTINATION` - container.
-```pil
-array-any-marked MARK, DESTINATION
-```
-
 ## array-join
 Stringify and concatenate all array's values with the `CONNECTOR` in-between, allocate the result and store it in `DESTINATION`. Throws if the array contains a map. `ARRAY` - array, `CONNECTOR` - stringifyable value, `DESTINATION` - container.
 ```pil
@@ -217,10 +181,10 @@ Erases all `VALUE`s from array. Time complexity is O(N). `ARRAY` - array, `VALUE
 array-erase-all ARRAY, VALUE
 ```
 
-## array-shallow-copy
+## array-copy
 Shallow copies an array into `DESTINATION`. Only copies references for complex runtime values like dynamic strings, arrays and maps. `ARRAY` - array, `DESTINATION` - container.
 ```pil
-array-shallow-copy ARRAY, DESTINATION
+array-copy ARRAY, DESTINATION
 ```
 
 ## array-deep-copy
