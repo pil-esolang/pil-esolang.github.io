@@ -1,5 +1,4 @@
 # Getting Started
-If you'd like an introduction first, [click here](introduction/introduction.md).
 
 ## Installation
 To run PIL you need the PIL interpreter. There are two options:
@@ -39,7 +38,7 @@ On Windows you can move the executable to a safe spot (e.g. `C:/pil_interpreter/
 To run the famous hello world program paste this into a `main.pil` file:
 ```pil
 main()
-   println "Hello, World!"
+   println "Hello, World!";
 ```
 And then run using this command:
 ```bash

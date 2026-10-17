@@ -2,7 +2,7 @@
 The lexer is responsible for turning code into tokens. You can also view it as turning sentences into words for easier parsing. It is also responsible for checking if the tokens are correctly formed.
 
 ## Tokens
-In PIL there are 41 different tokens, each having its own meaning. They all have the file and the line tied to them for better error handling:
+In PIL there are 40 different tokens, each having its own meaning. They all have the file and the line tied to them for better error handling:
 
 <table>
    <thead><tr>
@@ -44,24 +44,18 @@ In PIL there are 41 different tokens, each having its own meaning. They all have
       <tr><td>Identifier</td><td>[a-zA-Z_][a-zA-Z0-9_-]* or MY-IDENTIFIER123</td><td>Used to name a variable or a function</td></tr>
       <tr><td>Integer</td><td>[0-9]+ or 123</td><td>Used to create an integer</td></tr>
       <tr><td>Floating</td><td>[0-9]+\.[0-9] or 123.456</td><td>Used to create a float</td></tr>
-      <tr><td>String</td><td>"*"</td><td>Used to create a string. See [String rules](#string-rules)</td></tr>
-      <tr><td>Character</td><td>'.'</td><td>Used to create a character. See [String rules](#string-rules)</td></tr>
-      <tr><td>Format Start</td><td>${</td><td>Used in constant formatting. See [String rules](#string-rules)</td></tr>
-      <tr><td>Format End</td><td>}</td><td>Used to end constant formatting. See [String rules](#string-rules)</td></tr>
-      <tr><td>Eval Start</td><td>$[</td><td>Used in constant formatting. See [String rules](#string-rules)</td></tr>
-      <tr><td>Eval End</td><td>]</td><td>Used to end constant formatting. See [String rules](#string-rules)</td></tr>
-      <tr><td>Newline</td><td></td><td>Used to separate function calls</td></tr>
+      <tr><td>String</td><td>"*"</td><td>Used to create a string.</td></tr>
+      <tr><td>Character</td><td>'.'</td><td>Used to create a character.</td></tr>
+      <tr><td>Comma</td><td>,</td><td>Used to separate values in declarations and function calls</td></tr>
+      <tr><td>Dot</td><td>.</td><td>Used for array access</td></tr>
+      <tr><td>Semicolon</td><td>;</td><td>Used to terminate some statements</td></tr>
+      <tr><td>Assign</td><td>=</td><td>Used purely for syntax</td></tr>
       <tr><td>EOF</td><td></td><td>Used to denote the end of tokens</td></tr>
    </tbody>
 </table>
 
-Commas and whitespace are ignored. Throws on any unknown character.
+Whitespace is ignored. Throws on any unknown character. Throws if a floating number contains multiple decimal points.
 
-Throws if a floating number contains multiple decimal points.
-
-## String rules
-Strings and characters support the following escape codes: `\a`, `\b`, `\t`, `\n`, `\v`, `\f`, `\r`, `\e`, `\\`, `\'`, `\"`, `\{`, `\}`, `\$`. Throws a warning on unknown escape codes.
+Strings and characters support the following escape codes: `\a`, `\b`, `\t`, `\n`, `\v`, `\f`, `\r`, `\e`, `\\`, `\'`, `\"`, `\{`. Throws a warning on unknown escape codes.
 
 Strings and characters terminate on a newline, so multi-line strings are not possible. Throws on unterminated strings or characters.
-
-Strings support constant formatting. Lexer emits formatting and evaluation tokens on found `${` and `$[`, that get later handled in the parser. Throws if they are nested or if they aren't terminated.

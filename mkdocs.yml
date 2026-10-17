@@ -56,14 +56,7 @@ nav:
   - Home: index.md
   - Docs:
     - Getting Started: getting_started.md
-    - Introduction:
-      - Introduction: introduction/introduction.md
-      - Functions: introduction/functions.md
-      - Registers: introduction/registers.md
-      - Values: introduction/values.md
-      - Control Flow: introduction/control_flow.md
-      - Directives: introduction/directives.md
-      - Constants: introduction/constants.md
+    - Introduction: introduction.md
     - Built-ins:
       - String Library: built-ins/strings.md
       - Array Library: built-ins/arrays.md

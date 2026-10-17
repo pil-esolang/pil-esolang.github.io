@@ -8,12 +8,12 @@ class PilLexer(RegexLexer):
 
    tokens = {
       'root': [
-         (r';.*$', Comment.Single),
+         (r'#.*$', Comment.Single),
          (r'"', String.Double, 'string'),
          (r"'", String.Single, 'char'),
          (r'@[a-zA-Z][a-zA-Z0-9_-]*', Keyword.Pseudo),
          (r'[rR]?\$[0-9]+\b', Name.Variable.Magic),
-         (r'\b(return|let|const)\b', Keyword),
+         (r'\b(return|let |const |global |enum |array |struct )\b', Keyword),
          (r'[a-zA-Z][a-zA-Z0-9_-]*(?=\s*:)', Name.Variable),
          (r'[a-zA-Z][a-zA-Z0-9_.-]*(?=\s*\()', Name.Function),
          (r'[0-9]+\.[0-9]+', Number.Float),
