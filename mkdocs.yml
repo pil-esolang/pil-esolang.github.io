@@ -57,13 +57,14 @@ nav:
   - Docs:
     - Getting Started: getting_started.md
     - Introduction: introduction.md
+    - Language:
+      - Values: language/values.md
+      - Lexer: language/lexer.md
+      - Translator: language/translator.md
     - Built-ins:
       - String Library: built-ins/strings.md
       - Array Library: built-ins/arrays.md
       - Map Library: built-ins/maps.md
       - Math Library: built-ins/math.md
+      - File & OS Library: built-ins/fileos.md
       - Built-ins: built-ins/builtins.md
-    - Language:
-      - Values: language/values.md
-      - Lexer: language/lexer.md
-      - Translator: language/translator.md

@@ -1,5 +1,5 @@
 # Lexer
-The lexer is responsible for turning code into tokens. You can also view it as turning sentences into words for easier parsing. It is also responsible for checking if the tokens are correctly formed.
+The lexer is responsible for turning code into tokens. You can also view it as turning characters into words for easier parsing. It is also responsible for checking if the tokens are correctly formed.
 
 ## Tokens
 In PIL there are 40 different tokens, each having its own meaning. They all have the file and the line tied to them for better error handling:

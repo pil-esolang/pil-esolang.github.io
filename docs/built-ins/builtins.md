@@ -515,7 +515,7 @@ at CONTAINER, KEY, DESTINATION
 ```
 
 ### store
-Store `VALUE` at `KEY`. For maps `KEY` is the literal key and for arrays and strings it is the index. Throws if key is of incorrect type (non-integer for strings and arrays or non-key type for maps) or if it is out of bounds. Throws if `CONTAINER` cannot be accessed. `CONTAINER` - string, array or map, `KEY` - integer/key value, `VALUE` - any value.
+Store `VALUE` at `KEY`. For maps `KEY` is the literal key and for arrays and strings it is the index. Throws if key is of incorrect type (non-integer for strings and arrays or non-key type for maps) or if it is out of bounds. Throws if `CONTAINER` cannot be accessed. `CONTAINER` - dynamic string, array or map, `KEY` - integer/key value, `VALUE` - any value.
 ```pil
 store CONTAINER, KEY, VALUE
 ```
