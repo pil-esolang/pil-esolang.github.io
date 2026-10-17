@@ -37,15 +37,27 @@
          <lastmod>2026-10-17</lastmod>
     </url>
     <url>
-         <loc>https://pil-esolang.github.io/language/lexer/</loc>
+         <loc>https://pil-esolang.github.io/language/directives/</loc>
          <lastmod>2026-10-17</lastmod>
     </url>
     <url>
-         <loc>https://pil-esolang.github.io/language/translator/</loc>
+         <loc>https://pil-esolang.github.io/language/enumerations/</loc>
+         <lastmod>2026-10-17</lastmod>
+    </url>
+    <url>
+         <loc>https://pil-esolang.github.io/language/functions/</loc>
+         <lastmod>2026-10-17</lastmod>
+    </url>
+    <url>
+         <loc>https://pil-esolang.github.io/language/structures/</loc>
          <lastmod>2026-10-17</lastmod>
     </url>
     <url>
          <loc>https://pil-esolang.github.io/language/values/</loc>
+         <lastmod>2026-10-17</lastmod>
+    </url>
+    <url>
+         <loc>https://pil-esolang.github.io/language/variables/</loc>
          <lastmod>2026-10-17</lastmod>
     </url>
 </urlset>
