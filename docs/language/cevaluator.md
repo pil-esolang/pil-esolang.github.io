@@ -95,6 +95,7 @@ There's a plethora of built-in functions. Here is the full table:
       <tr><td>tau</td><td>0</td><td>6.283185307179586</td></tr>
       <tr><td>e</td><td>0</td><td>2.718281828459045</td></tr>
       <tr><td>hypot</td><td>2 - X, Y</td><td>Calculate &radic;<s style="text-decoration:overline">x<sup>2</sup>+y<sup>2</sup></s></td></tr>
+      <tr><td>hypot3</td><td>3 - X, Y, Z</td><td>Calculate &radic;<s style="text-decoration:overline">x<sup>2</sup>+y<sup>2</sup>+z<sup>2</sup></s></td></tr>
       <tr><td>gcd</td><td>2</td><td>Greated common divisor</td></tr>
       <tr><td>lcm</td><td>2</td><td>Least common multiple</td></tr>
    </tbody>
