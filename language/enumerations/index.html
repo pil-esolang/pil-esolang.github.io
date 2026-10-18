@@ -22,7 +22,19 @@
 <span class=w>   </span><span class=nv>OsExec</span><span class=w>      </span>=<span class=w> </span>[<span class=mi>1</span><span class=w> </span>&lt;&lt;<span class=w> </span><span class=mi>2</span>],<span class=w> </span><span class=c1># 4</span>
 <span class=w>   </span><span class=nv>Network</span><span class=w>     </span>=<span class=w> </span>[<span class=mi>1</span><span class=w> </span>&lt;&lt;<span class=w> </span><span class=mi>3</span>],<span class=w> </span><span class=c1># 8</span>
 )
-</code></pre></div></p> <h2 id=access>Access<a class=headerlink href=#access title="Permanent link">&para;</a></h2> <p>Enumeration values can be accessed using <code>ENUM.ENTRY</code> syntax. Enumeration types cannot be passed just like structures can and are purely parse-time for this reason. Enumerations cannot be converted to strings without an external array for the same reason. <div class=highlight><pre><span></span><code><span class=k>enum </span><span class=nf>Direction</span><span class=w> </span>(<span class=w> </span><span class=nv>East</span>,<span class=w> </span><span class=nv>West</span>,<span class=w> </span><span class=nv>North</span>,<span class=w> </span><span class=nv>South</span><span class=w> </span>)
+</code></pre></div></p> <p>There are also array enumerations that work more closely to constants. They don't require the dot syntax to access but in turn polute the global namespace with a lot of symbols. It's recommended to either not use them or use them with MACRO_CASE. Everything else functions just the same as for regular enumerations. They can be defined by using <code>array</code> keyword after <code>enum</code> keyword: <div class=highlight><pre><span></span><code><span class=k>enum array </span><span class=nf>Thing</span><span class=w> </span>(
+<span class=w>   </span><span class=nv>x</span><span class=w> </span>=<span class=w> </span><span class=mi>20</span>,
+<span class=w>   </span><span class=nv>y</span><span class=w> </span>=<span class=w> </span><span class=mi>30</span>,
+<span class=w>   </span><span class=nv>z</span><span class=w> </span>=<span class=w> </span><span class=mi>40</span>,
+<span class=w>   </span><span class=nv>w</span><span class=w> </span>=<span class=w> </span><span class=mi>50</span>,
+)
+
+<span class=nf>main</span>()
+<span class=w>   </span><span class=nv>println</span><span class=w> </span><span class=nv>Thing</span>.<span class=nv>x</span>;<span class=w> </span><span class=c1># 20</span>
+<span class=w>   </span><span class=nv>println</span><span class=w> </span><span class=nv>Thing</span>.<span class=nv>y</span>;<span class=w> </span><span class=c1># 30</span>
+<span class=w>   </span><span class=nv>println</span><span class=w> </span><span class=nv>z</span>;<span class=w>       </span><span class=c1># 40</span>
+<span class=w>   </span><span class=nv>println</span><span class=w> </span><span class=nv>w</span>;<span class=w>       </span><span class=c1># 50</span>
+</code></pre></div></p> <h2 id=access>Access<a class=headerlink href=#access title="Permanent link">&para;</a></h2> <p>Enumeration values can be accessed using <code>ENUM.ENTRY</code> syntax. Enumeration types cannot be passed just like structures can and are purely parse-time for this reason. Enumerations cannot be converted to strings without an external array for the same reason. To access array enumerations, you can use the aforementioned syntax or simply the entry's name. <div class=highlight><pre><span></span><code><span class=k>enum </span><span class=nf>Direction</span><span class=w> </span>(<span class=w> </span><span class=nv>East</span>,<span class=w> </span><span class=nv>West</span>,<span class=w> </span><span class=nv>North</span>,<span class=w> </span><span class=nv>South</span><span class=w> </span>)
 
 <span class=nf>main</span>()
 <span class=w>   </span><span class=k>local </span><span class=nv>direction</span>,<span class=w> </span><span class=nv>map</span>,<span class=w> </span><span class=nv>name</span>;
