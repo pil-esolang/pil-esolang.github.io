@@ -1,7 +1,7 @@
 # Built-ins
 It is recommended to read [Language/Values](../language/values.md) first for a better understanding of allowed parameter types, value semantics and behavior.
 
-These are basic operation/miscellaneous built-ins present in PIL. On top of these, there are some more common math operation built-ins in the [Math Library](#math.md). Unlike other built-in documentation pages, these will contain sub-groups.
+These are basic operation/miscellaneous built-ins present in PIL. On top of these, there are some more common math operation built-ins in the [Math Library](math.md). Unlike other built-in documentation pages, these will contain sub-groups.
 
 ## Input/output
 ### flush

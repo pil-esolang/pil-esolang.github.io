@@ -65,6 +65,7 @@ nav:
       - Enumerations: language/enumerations.md
       - Constant Evaluator: language/cevaluator.md
       - Directives: language/directives.md
+      - Interpreter: language/interpreter.md
     - Built-ins:
       - String Library: built-ins/strings.md
       - Array Library: built-ins/arrays.md
