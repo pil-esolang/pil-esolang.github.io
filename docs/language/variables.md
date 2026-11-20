@@ -35,24 +35,3 @@ const my-const = 1337, pi = 3.141592;
 main()
    println my-const, ' ', pi;
 ```
-
-## Registers/return registers
-By default there are 16 registers and 4 return registers for a program. But that can be changed using [Directives](directives.md). Registers are global containers that do not need to be defined. They should be used for temporary, unimportant values such as conditions. They can be accessed using `$N` and `r$N` syntax respectively and are 0-indexed. By default registers are set to null value.
-
-Registers cannot be accessed using runtime values but can be using parse-time constructs such as constants and enumerations. This can be used to create named registers, which is equal to globals. The only reason for this could be the register built-ins.
-
-Return registers are set by the [return](../built-ins/builtins.md#return) built-in, which is added at the end of every function if it is not already present. Return registers are set in the same order they are returned and can be read and modified just like regular registers. Return registers are not cleared if a function returns less than previously, instead a flag is set to the return count of the function, which can be retrieved with the [return-count](../built-ins/builtins.md#return-count) built-in. If more values are returned than there are return registers, parse-time error is thrown and they must be bumped up using [@return-reg-size](directives.md#return-reg-size) directive.
-```pil
-const cond = 0;
-
-my-min(a, b)
-   le a, b, $cond;
-   jmp $cond, my-min-a-less;
-   return b;
-my-min-a-less:
-   return a;
-
-main()
-   my-min 10, 20;
-   println r$0;
-```

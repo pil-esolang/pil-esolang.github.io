@@ -31,9 +31,10 @@ main()
 It's same with loops. Here's a loop that counts from 1 to 10:
 ```pil
 loop(i, n)
+   local cond;
 loop-start:
-   greq i, n, $0;
-   jmp $0, loop-end;
+   greq i, n, cond;
+   jmp cond, loop-end;
 
    println i;
    incr i;
@@ -59,7 +60,7 @@ main()
 ```
 
 ## Including other files
-To include a file use `@include`. It works similarly to C's includes but doesn't require guards:
+To include a file use `include`. It works similarly to C's includes but doesn't require guards:
 
 include.pil
 ```pil
@@ -69,7 +70,7 @@ my-func()
 
 main.pil
 ```pil
-@include "include.pil"
+include "include.pil"
 
 main()
    my-func;

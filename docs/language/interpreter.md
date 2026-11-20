@@ -24,8 +24,9 @@ Flags must be passed before the command. Here's the full list of them.
 Output all bytecode after parsing. Output for this program:
 ```pil
 my-add(x, y)
-   add x, y, $0;
-   return $0;
+   local result;
+   add x, y, result;
+   return result;
 
 main()
    println "Hello, World!";
@@ -33,8 +34,8 @@ main()
 Should look something like this:
 ```bash
 Bytecode:
-test.pil:2     add: Local Variable, Local Variable, Register, 
-test.pil:3     return: Register, 
+test.pil:2     add: Local Variable, Local Variable, Local Variable, 
+test.pil:3     return: Local Variable, 
 test.pil:6     println: Constant String, 
 test.pil:6     return: 
 ```
@@ -44,8 +45,9 @@ Since functions and labels are translated to positions, they won't show up here.
 Output all tokens after lexing. Output for this program:
 ```pil
 my-add(x, y)
-   add x, y, $0;
-   return $0;
+   local result;
+   add x, y, result;
+   return result;
 
 main()
    println "Hello, World!";
@@ -59,25 +61,26 @@ test.pil:1     Identifier: 'x'.
 test.pil:1     Comma: ''.
 test.pil:1     Identifier: 'y'.
 test.pil:1     Right Parentheses: ''.
-test.pil:2     Identifier: 'add'.
-test.pil:2     Identifier: 'x'.
-test.pil:2     Comma: ''.
-test.pil:2     Identifier: 'y'.
-test.pil:2     Comma: ''.
-test.pil:2     Register: ''.
-test.pil:2     Integer: '0'.
+test.pil:2     Identifier: 'local'.
+test.pil:2     Identifier: 'result'.
 test.pil:2     Semicolon: ''.
-test.pil:3     Identifier: 'return'.
-test.pil:3     Register: ''.
-test.pil:3     Integer: '0'.
+test.pil:3     Identifier: 'add'.
+test.pil:3     Identifier: 'x'.
+test.pil:3     Comma: ''.
+test.pil:3     Identifier: 'y'.
+test.pil:3     Comma: ''.
+test.pil:3     Identifier: 'result'.
 test.pil:3     Semicolon: ''.
-test.pil:5     Identifier: 'main'.
-test.pil:5     Left Parentheses: ''.
-test.pil:5     Right Parentheses: ''.
-test.pil:6     Identifier: 'println'.
-test.pil:6     String: 'Hello, World!'.
-test.pil:6     Semicolon: ''.
-test.pil:6     EOF: 'EOF'.
+test.pil:4     Identifier: 'return'.
+test.pil:4     Identifier: 'result'.
+test.pil:4     Semicolon: ''.
+test.pil:6     Identifier: 'main'.
+test.pil:6     Left Parentheses: ''.
+test.pil:6     Right Parentheses: ''.
+test.pil:7     Identifier: 'println'.
+test.pil:7     String: 'Hello, World!'.
+test.pil:7     Semicolon: ''.
+test.pil:7     EOF: 'EOF'.
 ```
 
 ### --time

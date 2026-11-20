@@ -289,10 +289,10 @@ Stores 1 in `DESTINATION` if `VALUE` is a file handle, otherwise 0. `VALUE` - an
 is-file-handle VALUE, DESTINATION
 ```
 
-### is-reg
+### is-var
 Stores 1 in `DESTINATION` if `VALUE` is a container, otherwise 0. `VALUE` - any value, `DESTINATION` - container.
 ```pil
-is-reg VALUE, DESTINATION
+is-var VALUE, DESTINATION
 ```
 
 ### is-function
@@ -405,40 +405,10 @@ Checks whether `VALUE` matches any of the values and stores 1 in `DESTINATION` i
 table-contains VALUE, DESTINATION, TARGET...
 ```
 
-### reg-size
-Stores the total number of registers in `DESTINATION`. `DESTINATION` - container.
-```pil
-reg-size DESTINATION
-```
-
-### reg-at
-Get the value of the register at position `ID` and store it in `DESTINATION`. Throws if `ID` is out of bounds. `ID` - unsigned integer, `DESTINATION` - container.
-```pil
-reg-at ID, DESTINATION
-```
-
-### reg-set
-Set the register at position `ID` to `VALUE`. Throws if `ID` is out of bounds. `ID` - unsigned integer, `VALUE` - any value.
-```pil
-reg-set ID, VALUE
-```
-
-### return-reg-size
-Stores the total number of return registers in `DESTINATION`. `DESTINATION` - container.
-```pil
-return-reg-size DESTINATION
-```
-
-### return-reg-at
+### return-at
 Get the value of the return register at position `ID` and store it in `DESTINATION`. Throws if `ID` is out of bounds. `ID` - unsigned integer, `DESTINATION` - container.
 ```pil
-return-reg-at ID, DESTINATION
-```
-
-### return-reg-set
-Set the return register at position `ID` to `VALUE`. Throws if `ID` is out of bounds. `ID` - unsigned integer, `VALUE` - any value.
-```pil
-return-reg-set ID, VALUE
+return-at ID, DESTINATION
 ```
 
 ### return-count
