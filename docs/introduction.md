@@ -62,13 +62,15 @@ main()
 ## Including other files
 To include a file use `include`. It works similarly to C's includes but doesn't require guards:
 
-include.pil
+> include.pil
 ```pil
 my-func()
    println "Hello, World!";
 ```
 
-main.pil
+---
+
+> main.pil
 ```pil
 include "include.pil"
 
