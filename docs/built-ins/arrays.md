@@ -146,9 +146,21 @@ array-shuffle ARRAY
 ```
 
 ## array-sort
-Sort the array. Sorts ascendingly if `ASCENDING` is truthy, descendingly otherwise. Throws if array contains functions, labels, arrays or maps. `ARRAY` - array, `ASCENDING` - integer.
+Sort the array based on a callback function. The callback function must take in two arguments and must return a single value. Modifying the array or having improper sort condition can result in undefined behavior. `ARRAY` - array, `CALLBACK` - user-made function.
 ```pil
-array-sort ARRAY, ASCENDING
+array-sort ARRAY, CALLBACK
+```
+
+## array-sort-asc
+Sort the array in an ascending order. Throws if array contains non-comparable types (such as maps, functions, etc.). `ARRAY` - array.
+```pil
+array-sort-asc ARRAY
+```
+
+## array-sort-desc
+Sort the array in a descending order. Throws if array contains non-comparable types (such as maps, functions, etc.). `ARRAY` - array.
+```pil
+array-sort-desc ARRAY
 ```
 
 ## array-count
@@ -175,10 +187,28 @@ Sets `DESTINATION` to 1 if `VALUE` can be found in the array, otherwise 0. Time 
 array-contains ARRAY, VALUE, DESTINATION
 ```
 
-## array-erase-all
-Erases all `VALUE`s from array. Time complexity is O(N). `ARRAY` - array, `VALUE` - value.
+## array-erase-if
+Erases values based on a callback function. The callback function must take in a single argument and must return a single value. A value is erased if a truthy value is returned. Modifying the array while erasing can result in undefined behavior. `ARRAY` - array, `CALLBACK` - user-made function.
 ```pil
-array-erase-all ARRAY, VALUE
+array-erase-if ARRAY, CALLBACK
+```
+
+## array-map
+Modifies all values based on a callback function. The callback function must take in a single argument and must return a single value. The value returned will be the new value. Modifying the array while mapping values can result in undefined behavior. `ARRAY` - array, `CALLBACK` - user-made function.
+```pil
+array-map ARRAY, CALLBACK
+```
+
+## array-filter
+Returns a span of shallow copied array based on a callback function. The callback function must take in a single argument and must return a single value. The element is included in the span if the returned value is truthy. Modifying the array while filtering can result in undefined behavior. Allocates an array. `ARRAY` - array, `CALLBACK` - user-made function, `DESTINATION` - container.
+```pil
+array-filter ARRAY, CALLBACK, DESTINATION
+```
+
+## array-reduce
+Calculates a value based on a callback function by passing the return value from the previous calculation to the preceding element. Stores the final result in `DESTINATION`. The callback function must take in two arguments and must return a single value. Modifying the array while reducing can result in undefined behavior. `ARRAY` - array, `CALLBACK` - user-made function, `DESTINATION` - container.
+```pil
+array-reduce ARRAY, CALLBACK, DESTINATION
 ```
 
 ## array-copy

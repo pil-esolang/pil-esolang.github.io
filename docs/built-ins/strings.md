@@ -235,6 +235,18 @@ Converts string to uppercase. `STRING` - dynamic string.
 string-to-upper STRING
 ```
 
+## string-pad-left
+Adds padding to `STRING` such that it is at least `N` characters in size. Throws if `N` is less or equal to 0. `STRING` - dynamic string, `N` - unsigned integer, `CHAR` - character to pad with.
+```pil
+string-pad-left STRING, N, CHAR
+```
+
+## string-pad-right
+Adds padding to `STRING` such that it is at least `N` characters in size. Throws if `N` is less or equal to 0. `STRING` - dynamic string, `N` - unsigned integer, `CHAR` - character to pad with.
+```pil
+string-pad-right STRING, N, CHAR
+```
+
 ## string-copy
 Copies and allocates a new string into `DESTINATION`. `STRING` - string, `DESTINATION` - container.
 ```pil

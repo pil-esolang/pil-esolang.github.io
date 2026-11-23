@@ -4,6 +4,12 @@ It is recommended to read [Language/Values](../language/values.md) first for a b
 These are basic operation/miscellaneous built-ins present in PIL. On top of these, there are some more common math operation built-ins in the [Math Library](math.md). Unlike other built-in documentation pages, these will contain sub-groups.
 
 ## Input/output
+### stdin-eof
+Stores 1 in `DESTINATION` if stdin contains EOF, otherwise 0. `DESTINATION` - container.
+```pil
+stdin-eof DESTINATION
+```
+
 ### flush
 Flush the output to the terminal.
 ```pil

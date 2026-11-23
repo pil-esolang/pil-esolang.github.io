@@ -291,6 +291,12 @@ Must have environment permissions.
 os-env-set VAR, VALUE
 ```
 
+## os-args
+Allocate the passed OS arguments in an array of strings and store it in `DESTINATION`. `DESTINATION` - container.
+```pil
+os-args DESTINATION
+```
+
 ## os-exec
 Execute command `COMMAND` and store any output up until 4KiB in `DESTINATION`. Throws if cannot open pipe. `COMMAND` - string, `DESTINATION` - container.
 
