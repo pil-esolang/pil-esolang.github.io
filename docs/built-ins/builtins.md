@@ -34,6 +34,12 @@ Output all `ARGS` to the terminal including a newline. Does not output a separat
 println ARGS...
 ```
 
+### print-lines
+Output all `ARGS` to the terminal. All printed arguments are followed by a newline. `ARGS...` - any value.
+```pil
+print-lines ARGS...
+```
+
 ### printf
 Formats the `FORMAT-STRING` string with all arguments after it and outputs it to the terminal. Works by replacing all `{}` with the arguments in left-to-right direction. Does not validate format argument count. `FORMAT-STRING` - string, `ARG1...` - stringifyable value.
 ```pil
@@ -446,6 +452,12 @@ func-arg-match FUNCTION, ARGS, DESTINATION
 Create a new structure based on `STRUCT` template and store in `DESTINATION`. `ARGS...` count must match structure's field count. `STRUCT` - structure, `DESTINATION` - container, `ARGS...` - any value.
 ```pil
 make STRUCT, DESTINATION, ARGS...
+```
+
+### make-no-init
+Create a new structure with all fields set to null and store in `DESTINATION`. `STRUCT` - structure, `DESTINATION` - container.
+```pil
+make STRUCT, DESTINATION
 ```
 
 ### free
